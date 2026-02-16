@@ -1,0 +1,249 @@
+* {
+  box-sizing: border-box;
+}
+
+
+input,
+button {
+  font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    
+    font-family: 'Orbitron';
+    font-size: 50px;
+}
+
+.intro{
+    text-align: center;
+}
+
+
+h2 {
+    color: #3f4942;
+    font-size: 18px;
+}
+
+.s130 {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background: url("background1.png") no-repeat bottom center;
+  background-size: contain;
+  align-self: flex-end;
+  padding: 15px;
+
+}
+
+
+.s130 form {
+  width: 100%;
+  max-width: 790px;
+  padding-top: 5vh;
+}
+
+
+.s130 form .inner-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 34px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+
+.s130 form .inner-form .input-field {
+  height: 68px;
+}
+
+
+.s130 form .inner-form .input-field input {
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  border: 0;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #000;
+  outline: none;
+}
+
+
+.s130 form .inner-form .input-field input::placeholder {
+  color: #222;
+}
+
+
+.s130 form .inner-form .input-field.first-wrap {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  background: #d9f1e3;
+}
+
+.s130 form .inner-form .input-field.first-wrap input {
+  flex-grow: 1;
+}
+
+
+.s130 form .inner-form .input-field.second-wrap {
+  min-width: 216px;
+}
+
+.s130 form .inner-form .input-field.second-wrap .btn-search {
+  height: 100%;
+  width: 100%;
+  font-size: 16px;
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+  background: #00ad5f;
+  transition: background 0.2s ease-out;
+  font-weight: 300;
+}
+
+.s130 form .inner-form .input-field.second-wrap .btn-search:hover {
+  background: #009451;
+}
+
+
+@media screen and (max-width: 992px) {
+  .s130 form .inner-form .input-field {
+    height: 50px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .s130 form .inner-form .input-field.second-wrap {
+    min-width: 100px;
+  }
+
+  .s130 form .inner-form .input-field.second-wrap .btn-search {
+    font-size: 13px;
+  }
+}
+
+.content {
+	 display: flex;
+	 margin: 0 auto;
+	 justify-content: center;
+	 align-items: center;
+	 flex-wrap: wrap;
+	 max-width: 1500px;
+}
+ p.overview {
+	 font-size: 12px;
+	 height: 200px;
+	 width: 100%;
+	 overflow: hidden;
+	 text-overflow: ellipsis;
+}
+ .heading {
+	 width: 100%;
+	 margin-left: 1rem;
+	 font-weight: 900;
+	 font-size: 1.618rem;
+	 text-transform: uppercase;
+	 letter-spacing: 0.1ch;
+	 line-height: 1;
+	 padding-bottom: 0.5em;
+	 margin-bottom: 1rem;
+	 position: relative;
+}
+ .heading:after {
+	 display: block;
+	 content: '';
+	 position: absolute;
+	 width: 60px;
+	 height: 4px;
+	 background: linear-gradient(135deg, #1a9be6, #1a57e6);
+	 bottom: 0;
+}
+ .description {
+	 width: 100%;
+	 margin-top: 0;
+	 margin-left: 1rem;
+	 margin-bottom: 3rem;
+}
+
+.card {
+  color: inherit;
+  cursor: pointer;
+  width: calc(33% - 3rem);
+  min-width: calc(33% - 3rem);
+  height: 400px;
+  min-height: 400px;
+  perspective: 1000px;
+  margin: 1rem auto;
+  position: relative;
+}
+
+
+@media screen and (max-width: 800px) {
+  .card {
+    width: calc(50% - 3rem);
+}
+}
+@media screen and (max-width: 500px) {
+  .card {
+    width: 100%;
+}
+}
+.front, .back {
+  display: flex;
+  border-radius: 6px;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transition: ease-in-out 600ms;
+}
+.front {
+  background-size: cover;
+  padding: 2rem;
+  font-size: 1.618rem;
+  font-weight: 600;
+  color: #fff;
+  overflow: hidden;
+  font-family: Poppins, sans-serif;
+}
+.front:before {
+  position: absolute;
+  display: block;
+  content: '';
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #1a9be6, #1a57e6);
+  opacity: 0.25;
+  z-index: -1;
+}
+.card:hover .front {
+  transform: rotateY(180deg);
+}
+.card:nth-child(even):hover .front {
+  transform: rotateY(-180deg);
+}
+.back {
+  background: #fff;
+  transform: rotateY(-180deg);
+  padding: 0 2em;
+}
+.card:hover .back {
+  transform: rotateY(0deg);
+}
+.card:nth-child(even) .back {
+  transform: rotateY(180deg);
+}
+.card:nth-child(even):hover .back {
+  transform: rotateY(0deg);}

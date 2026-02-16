@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}My Top 10 Movies{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h1 class="heading">Your top 10 anime recommendations!</h1>
+   
+  <div class="card" >
+    <div class="front" style="background-image: url('https://m.media-amazon.com/images/I/81VGXk0+n5L._AC_UF894,1000_QL80_.jpg');">
+        <p class="large">1</p>
+    </div>
+    <div class="back">
+      <div>
+    <div class="title">GINTAMA <span class="release_date">(2011)</span></div>
+        <div class="rating">
+            <label>9.00</label>
+          <i class="fas fa-star star"></i>
+        </div>
+          <p class="review">"Loved it!"</p>
+        <p class="overview">
+            A mysterious Hollywood stuntman and mechanic moonlights as a getaway driver and finds himself in trouble when he helps out his neighbor in this action drama.
+        </p>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
