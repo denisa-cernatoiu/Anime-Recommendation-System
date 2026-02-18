@@ -1,31 +1,71 @@
-{% extends 'base.html' %}
-
-{% block title %}My Top 10 Movies{% endblock %}
-
-{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Orbitron"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,700"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+      crossorigin="anonymous"
+    />
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+  />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <!-- d-flex justify-content-between align-items-center mb-4 -->
+<body>
 <div class="container">
+  <div  class="header-container">
   <h1 class="heading">Your top 10 anime recommendations!</h1>
-   
-  <div class="card" >
-    <div class="front" style="background-image: url('https://m.media-amazon.com/images/I/81VGXk0+n5L._AC_UF894,1000_QL80_.jpg');">
-        <p class="large">1</p>
-    </div>
-    <div class="back">
-      <div>
-    <div class="title">GINTAMA <span class="release_date">(2011)</span></div>
-        <div class="rating">
-            <label>9.00</label>
-          <i class="fas fa-star star"></i>
+
+  <a href="/" class="btn btn-success">Get another!</a>
+  </div>
+  <div class="row row-cols-2 row-cols-md-5 g-3"> 
+    {% for movie in movies %}
+    <div class="col">
+      <div class="card">
+
+        <div class="front"
+             style="background-image: url('{{ movie.img_url }}');">
+          <p class="large">{{ loop.index }}</p>
         </div>
-          <p class="review">"Loved it!"</p>
-        <p class="overview">
-            A mysterious Hollywood stuntman and mechanic moonlights as a getaway driver and finds himself in trouble when he helps out his neighbor in this action drama.
-        </p>
+
+        <div class="back">
+          <div>
+            <div class="title">{{ movie.title_english }}</div>
+
+            <div class="rating">
+              <label>{{ movie.rating }}</label>
+              <i class="fas fa-star star"></i>
+            </div>
+
+            <p class="overview">
+              {{ movie.description }}
+            </p>
+          </div>
+        </div>
 
       </div>
     </div>
+    {% endfor %}
   </div>
 </div>
-
-
-{% endblock %}
+  </body>
+</html>
