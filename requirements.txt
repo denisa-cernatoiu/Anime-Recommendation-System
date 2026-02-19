@@ -1,7 +1,7 @@
 Requests==2.31.0
 WTForms==3.0.1
 Flask_WTF==1.2.1
-Werkzeug==3.0.0
+Werkzeug
 Flask
 nltk
 Bootstrap-Flask
