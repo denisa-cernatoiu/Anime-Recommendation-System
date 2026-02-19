@@ -1,4 +1,4 @@
-import pickle
+import joblib
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
@@ -64,13 +64,25 @@ class AnimeRecommendation():
         return list(top_10)
 
     def save(self, path='model.pkl'):
-        with open(path, 'wb') as f:
-            pickle.dump(self, f)
+        data = {
+            'tfidf_vect': self.tfidf_vect,
+            'tfidf_matrix': self.tfidf_matrix,
+            'train_df': self.train_df,
+            'description_col': self.description_col,
+            'title_col': self.title_col,
+            }
+        joblib.dump(data, path)
 
     @classmethod
     def load(cls, path='model.pkl'):
-        with open(path, 'rb') as f:
-            return pickle.load(f)
+        data = joblib.load(path)
+        instance = cls()
+        instance.tfidf_vect = data['tfidf_vect']
+        instance.tfidf_matrix = data['tfidf_matrix']
+        instance.train_df = data['train_df']
+        instance.description_col = data['description_col']
+        instance.title_col = data['title_col']
+        return instance
 
 
 # training the model 
