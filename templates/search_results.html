@@ -1,0 +1,20 @@
+{% for suggestion in suggestions %}
+<li>
+    <button 
+    type="button"
+    class="suggestion-item"
+    hx-get="/fill-input"
+    hx-vals='{"selected": "{{ suggestion.title_english }}"}'
+    hx-swap="outerHTML"
+    hx-target="#search-input"
+    hx-trigger="click">
+
+    <div class="search-item-wrapper">
+       <p>{{ suggestion.title_english }}</p> 
+        <img src="{{ suggestion.coverImage_large }}" id="rec-img" alt="Banner" width="30" height="24" class="d-inline-block align-text-top">
+
+    </div>
+
+    </button>
+</li>
+{% endfor %}

@@ -7,7 +7,6 @@ from nltk.tokenize import word_tokenize
 from nltk import pos_tag
 
 
-
 class AnimeRecommendation():
     def __init__(self):
         self.tfidf_vect = TfidfVectorizer(stop_words="english")
@@ -72,6 +71,13 @@ class AnimeRecommendation():
 
 # training the model 
 if __name__ == "__main__":
+    import nltk
+    nltk.download('punkt_tab')
+    nltk.download('wordnet')
+    nltk.download('omw-1.4')
+    nltk.download('averaged_perceptron_tagger_eng')
+
+    
     df = pd.read_csv("anime_dataset_cleaned.csv")
     train_df = pd.DataFrame(df, columns=['title_english', 'description'])
     

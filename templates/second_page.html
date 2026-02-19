@@ -37,27 +37,27 @@
 
   <a href="/" class="btn btn-success">Get another!</a>
   </div>
-  <div class="row row-cols-2 row-cols-md-5 g-3"> 
-    {% for movie in movies %}
+  <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 g-3"> 
+    {% for anime in animes %}
     <div class="col">
-      <div class="card">
+      <div class="card w-100">
 
         <div class="front"
-             style="background-image: url('{{ movie.img_url }}');">
+             style="background-image: url('{{ anime.coverImage_large }}');">
           <p class="large">{{ loop.index }}</p>
         </div>
 
         <div class="back">
           <div>
-            <div class="title">{{ movie.title_english }}</div>
+            <div class="title">{{ anime.title_english }}</div>
 
-            <div class="rating">
-              <label>{{ movie.rating }}</label>
+            <div class="rating" style="color:#F5CC27">
+              <label>{{ anime.rating }}</label>
               <i class="fas fa-star star"></i>
             </div>
 
-            <p class="overview">
-              {{ movie.description }}
+            <br><p class="overview">
+              {{ anime.description }}
             </p>
           </div>
         </div>

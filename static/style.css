@@ -50,7 +50,7 @@ h2 {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   border-radius: 34px;
   overflow: hidden;
-  margin-bottom: 30px;
+  position: relative;
 }
 
 
@@ -81,6 +81,7 @@ h2 {
   display: flex;
   align-items: center;
   background: #d9f1e3;
+  
 }
 
 .s130 form .inner-form .input-field.first-wrap input {
@@ -141,8 +142,6 @@ p.overview {
 	 text-transform: uppercase;
 	 letter-spacing: 0.1ch;
 	 line-height: 1;
-	 /* padding-bottom: 0.5em;
-	 margin-bottom: 1rem; */
 	 position: relative;
 }
 .header-container{
@@ -152,15 +151,7 @@ p.overview {
   margin-bottom: 2rem;
   padding: 1rem;
 }
- /* .heading:after {
-	 display: block;
-	 content: '';
-	 position: absolute;
-	 width: 60px;
-	 height: 4px;
-	 background: linear-gradient(135deg, #1a9be6, #1a57e6);
-	 bottom: 0;
-} */
+
  .description {
 	 width: 100%;
 	 margin-top: 0;
@@ -205,6 +196,8 @@ p.overview {
   transform-style: preserve-3d;
   transition: ease-in-out 600ms;
 }
+
+
 .front {
   background-size: cover;
   padding: 2rem;
@@ -226,6 +219,13 @@ p.overview {
   opacity: 0.25;
   z-index: -1;
 }
+
+.title {
+  font-family: 'Orbitron';
+  font-weight: 700;
+  color: #033f01;
+}
+
 .card:hover .front {
   transform: rotateY(180deg);
 }
@@ -261,12 +261,6 @@ p.overview {
 }
 
 
-.test {
-    display: inline-flex; 
-    align-items: flex-start;
-}
-
-
 .btn.btn-success {
   border: 2px solid #00ad5f;
   background: #00ad5f;
@@ -282,4 +276,44 @@ p.overview {
 
 .btn.btn-success:hover {
   background: #009451;
+}
+
+.suggestions{
+  width: 70%;
+  list-style-type: none;
+  padding: 0 0 0 30px;
+
+}
+
+.suggestion-item {
+  height: 4rem;
+  width: 100%;
+  border-radius: 5px;
+  border-color: #00ad5f;
+  font-weight:700;
+  background: #e3f0e9;
+  transition: background 0.2s ease-out;
+  cursor: pointer;
+  text-align: center;
+}
+
+#rec-img {
+  width: 50px;
+  height: 50px;
+}
+
+.search-item-wrapper{
+display: flex;
+align-items: center;
+justify-content:space-between;
+}
+
+.suggestion-item:hover {
+  background: #c8f1d9;
+}
+
+
+.error-container {
+  text-align: center;
+  padding: 50px;
 }

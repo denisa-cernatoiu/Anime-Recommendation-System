@@ -7,23 +7,40 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
     <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
     <link href="static/style.css" rel="stylesheet" />
-    
+    <script src="https://cdn.jsdelivr.net/npm/htmx.org/dist/htmx.min.js" defer></script>
   </head>
   <body>
     <div class="intro">
     <h1>Ready for your next anime binge?</h1>
-    <h2>Enter your favorite anime and we’ll take it from there</h2>
+    <h2>Please select your favorite anime and we’ll take it from there</h2>
     </div>
+  </div>
     <div class="s130">
       <form method="GET" action="/anime_list">
         <div class="inner-form">
+
           <div class="input-field first-wrap">
-            <input name="search" placeholder="Enter an anime name" autocomplete="off" />
+            <input 
+              type="text" 
+              name="search" 
+              id="search-input"
+              placeholder="Enter an anime name" 
+              autocomplete="off" 
+              hx-get="/search-suggestions" 
+              hx-trigger="keyup changed delay:500ms" 
+              hx-target="#suggestions-list"
+              hx-swap="innerHTML"/>
           </div>
+
+          
+        
           <div class="input-field second-wrap">
-            <button class="btn-search" type="submit" >Make recommendation</button>
+            <button class="btn-search" type="submit">Make recommendation</button>
         </div>
-        </form>
+        </div>
+         <ul class="suggestions" id="suggestions-list"></ul>
+      </form>
       </div>
+       
   </body>
 </html>

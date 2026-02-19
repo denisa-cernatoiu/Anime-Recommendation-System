@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>              
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Orbitron"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,700"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">  
+
+</head>
+<body>      
+    <div class="error-container">
+        <h1 class="error-title">Error</h1>
+        <p>An error occurred while processing your request.</p> 
+        <p>Please make sure you selected an anime from the suggestions list before submitting.</p>
+        <a href="/" class="btn btn-primary">Go Back to Home</a><br>
+        <img src="static/error_image.png" alt="Error Image" class="error-image">
+    </div>  
+</body>
+</html> 

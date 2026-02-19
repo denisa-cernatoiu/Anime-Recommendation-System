@@ -3,7 +3,8 @@ WTForms==3.0.1
 Flask_WTF==1.2.1
 Werkzeug==3.0.0
 Flask==2.3.2
-nltk.download('punkt_tab')
-nltk.download('wordnet')
-nltk.download('omw-1.4')
-nltk.download('averaged_perceptron_tagger_eng')
+nltk
+flask-bootstrap5
+pandas
+scikit-learn
+gunicorn
