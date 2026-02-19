@@ -70,7 +70,10 @@ class AnimeRecommendation():
     @classmethod
     def load(cls, path='model.pkl'):
         with open(path, 'rb') as f:
-            return pickle.load(f)
+            obj = pickle.load(f)
+        instance = cls.__new__(cls)
+        instance.__dict__.update(obj.__dict__)
+        return instance
 
 
 # training the model 
