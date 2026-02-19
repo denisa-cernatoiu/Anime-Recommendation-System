@@ -87,10 +87,11 @@ class AnimeRecommendation():
 
 # training the model 
 if __name__ == "__main__":
+    import recommender
     df = pd.read_csv("anime_dataset_cleaned.csv")
     train_df = pd.DataFrame(df, columns=['title_english', 'description'])
     
-    rec = AnimeRecommendation()
+    rec = recommender.AnimeRecommendation()
     rec.fit(train_df,title_col='title_english', description_col='description')
     rec.save()
     print('Model trained!')
