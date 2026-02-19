@@ -5,6 +5,10 @@ from sklearn.metrics.pairwise import cosine_similarity
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
 from nltk import pos_tag
+import nltk
+
+for resource in ['punkt_tab', 'wordnet', 'omw-1.4', 'averaged_perceptron_tagger_eng']:
+    nltk.download(resource, quiet=True)
 
 
 class AnimeRecommendation():
@@ -71,13 +75,6 @@ class AnimeRecommendation():
 
 # training the model 
 if __name__ == "__main__":
-    import nltk
-    nltk.download('punkt_tab')
-    nltk.download('wordnet')
-    nltk.download('omw-1.4')
-    nltk.download('averaged_perceptron_tagger_eng')
-
-    
     df = pd.read_csv("anime_dataset_cleaned.csv")
     train_df = pd.DataFrame(df, columns=['title_english', 'description'])
     
